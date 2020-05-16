@@ -1,0 +1,33 @@
+# Nmap 7.80 scan initiated Fri May 15 23:25:37 2020 as: nmap -sC -sV -Pn -n -O -oN nmap/initial.txt 10.10.200.134
+Nmap scan report for 10.10.200.134
+Host is up (0.15s latency).
+Not shown: 998 closed ports
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.6 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 1e:d5:54:a8:17:cc:45:bd:8b:25:34:85:a7:cc:c6:49 (RSA)
+|   256 eb:bd:8e:3e:6e:4d:23:ab:a2:09:5a:63:69:ea:83:87 (ECDSA)
+|_  256 b1:bf:a7:9f:e3:90:28:ce:a8:aa:10:16:07:f9:82:46 (ED25519)
+80/tcp open  http    Node.js Express framework
+|_http-cors: HEAD GET POST PUT DELETE PATCH
+| http-robots.txt: 1 disallowed entry 
+|_/ftp
+|_http-title: OWASP Juice Shop
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.80%E=4%D=5/15%OT=22%CT=1%CU=32470%PV=Y%DS=2%DC=I%G=Y%TM=5EBF797
+OS:4%P=x86_64-pc-linux-gnu)SEQ(SP=107%GCD=1%ISR=10C%TI=Z%CI=I%II=I%TS=8)OPS
+OS:(O1=M508ST11NW6%O2=M508ST11NW6%O3=M508NNT11NW6%O4=M508ST11NW6%O5=M508ST1
+OS:1NW6%O6=M508ST11)WIN(W1=68DF%W2=68DF%W3=68DF%W4=68DF%W5=68DF%W6=68DF)ECN
+OS:(R=Y%DF=Y%T=40%W=6903%O=M508NNSNW6%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=A
+OS:S%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R
+OS:=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F
+OS:=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%
+OS:T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD
+OS:=S)
+
+Network Distance: 2 hops
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri May 15 23:26:12 2020 -- 1 IP address (1 host up) scanned in 35.32 seconds
