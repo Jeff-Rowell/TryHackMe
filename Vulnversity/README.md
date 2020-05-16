@@ -7,9 +7,6 @@ expot IP= 10.10.188.112
 ```
 
 ## Task 2 - Reconnaissance
-1. Scan this box: nmap -sV <machines ip>
-
-
 2. Scan the box, how many ports are open?
 ```
 6
@@ -138,6 +135,7 @@ Host script results:
 |_  start_date: N/A
 OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 43.50 seconds```
+```
 
 7. What port is the web server running on?
 ```
