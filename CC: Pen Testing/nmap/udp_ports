@@ -1,0 +1,8 @@
+# Nmap 7.80 scan initiated Sat May 16 19:03:26 2020 as: nmap -sC -sU -Pn -n -oN nmap/udp_ports 10.10.33.160
+Nmap scan report for 10.10.33.160
+Host is up (0.14s latency).
+Not shown: 999 closed ports
+PORT   STATE         SERVICE
+68/udp open|filtered dhcpc
+
+# Nmap done at Sat May 16 19:21:47 2020 -- 1 IP address (1 host up) scanned in 1101.33 seconds
