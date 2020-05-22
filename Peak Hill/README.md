@@ -1,4 +1,5 @@
-# Peak Hill -- [TryHackMe](https://tryhackme.com/room/peakhill)
+# Peak Hill 
+[TryHackMe](https://tryhackme.com/room/peakhill)
 
 ## Task 1 Peak Hill
 
@@ -97,30 +98,30 @@
   After playing around and throwing this into some binary to ASCII decoders, the results showed some data, but seemingly not all of it:
 
   ```
-  ]q (X
-   ssh_pass15qX   uqqX	   ssh_user1qX   hqqX
-   ssh_pass25qX   rqq	X
-   ssh_pass20q
-hqX	   ssh_pass7qX   _q
-qX	   ssh_user0qX   gqqX
-   ssh_pass26qX   lqqX	   ssh_pass5qX   3qqX	   ssh_pass1qX   1qqX
-   ssh_pass22qh
+  ]q�(X
+���ssh_pass15qX���uqqX	���ssh_user1qX���hqqX
+���ssh_pass25qX���rqq	X
+���ssh_pass20q
+hqX	���ssh_pass7qX���_q
+qX	���ssh_user0qX���gqqX
+���ssh_pass26qX���lqqX	���ssh_pass5qX���3qqX	���ssh_pass1qX���1qqX
+���ssh_pass22qh
 qX
-   ssh_pass12qX   @qqX	   ssh_user2q X   eq!q"X	   ssh_user5q#X   iq$q%X
-   ssh_pass18q&h
+���ssh_pass12qX���@qqX	���ssh_user2q X���eq!q"X	���ssh_user5q#X���iq$q%X
+���ssh_pass18q&h
 q'X
-   ssh_pass27q(X   dq)q*X	   ssh_pass3q+X   kq,q-X
-   ssh_pass19q.X   tq/q0X	   ssh_pass6q1X   sq2q3X	   ssh_pass9q4hq5X
-   ssh_pass23q6X   wq7q8X
-   ssh_pass21q9hq:X	   ssh_pass4q;hq<X
-   ssh_pass14q=X   0q>q?X	   ssh_user6q@X   nqAqBX	   ssh_pass2qCX   cqDqEX
-   ssh_pass13qFhqGX
-   ssh_pass16qHhAqIX	   ssh_pass8qJhqKX
-   ssh_pass17qLh)qMX
-   ssh_pass24qNh>qOX	   ssh_user3qPhqQX	   ssh_user4qRh,qSX
-   ssh_pass11qTh
-qUX	   ssh_pass0qVX   pqWqXX
-   ssh_pass10qYhqZe.
+���ssh_pass27q(X���dq)q*X	���ssh_pass3q+X���kq,q-X
+���ssh_pass19q.X���tq/q0X	���ssh_pass6q1X���sq2q3X	���ssh_pass9q4hq5X
+���ssh_pass23q6X���wq7q8X
+���ssh_pass21q9hq:X	���ssh_pass4q;hq<X
+���ssh_pass14q=X���0q>q?X	���ssh_user6q@X���nqAqBX	���ssh_pass2qCX���cqDqEX
+���ssh_pass13qFhqGX
+���ssh_pass16qHhAqIX	���ssh_pass8qJhqKX
+���ssh_pass17qLh)qMX
+���ssh_pass24qNh>qOX	���ssh_user3qPhqQX	���ssh_user4qRh,qSX
+���ssh_pass11qTh
+qUX	���ssh_pass0qVX���pqWqXX
+���ssh_pass10qYhqZe.
   ```
 
   The next thing was to convert the binary string into raw bytes and right it to a file to treat as a Python [pickle](https://docs.python.org/3/library/pickle.html) object. Since we have a mix of ASCII and raw bytes in the decoding, we will need to convert them both to the same format. We can do this using Perl:
