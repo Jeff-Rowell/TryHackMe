@@ -90,7 +90,7 @@ export IP=10.10.120.19
 
   Cool, so we have a password but nowhere to use it yet. Continuing to explore the findings from gobuster, the `/content/as` endpoint prompts for a username and password, where we log in as manager.
 
-  We can upload a PHP reverse shell in the `media content` section of the web app. After trying to upload the PHP file standalone seems to fail, but there is an option to upload as a zip file and have the website unzip upon upload:
+  We can upload a PHP reverse shell in the `media center` section of the web app. After trying to upload the PHP file standalone seems to fail, but there is an option to upload as a zip file and have the website unzip upon upload:
 
   ![loaded_zip](https://user-images.githubusercontent.com/32188816/82636987-12863480-9bc1-11ea-8600-565c95cd6e3f.png)
 
