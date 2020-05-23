@@ -1,0 +1,9 @@
+# Nmap 7.80 scan initiated Fri May 22 17:50:40 2020 as: nmap -sC -sV -Pn -n -oN nmap/initial -p 1000 -T1 10.10.220.110
+Nmap scan report for 10.10.220.110
+Host is up.
+
+PORT     STATE    SERVICE VERSION
+1000/tcp filtered cadlock
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri May 22 17:51:25 2020 -- 1 IP address (1 host up) scanned in 45.36 seconds
