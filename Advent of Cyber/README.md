@@ -1622,23 +1622,23 @@ Since the question is asking for the value of `local_ch` at the first call of it
 With these addresses, we will first need to set a break-point at `0x00400b51` so we can stop program execution. Once at the break-point, we can then analyze the value held in the `local_ch` memory address `rbp-0xc`. To do this we can execute the following steps in radare2 debug mode:
   1. `db 0x00400b51` - set a break-point at the first `movl` instruction for `local_ch`
 
-  ![main_start](https://user-images.githubusercontent.com/32188816/82859762-d579b500-9ed4-11ea-8578-c121d4bad5a8.png)
+![main_start](https://user-images.githubusercontent.com/32188816/82859762-d579b500-9ed4-11ea-8578-c121d4bad5a8.png)
 
   2. `pdf @main` - this is optional, to verify that the break-point was set in the correct location
 
-    ![main_after_breakpointset](https://user-images.githubusercontent.com/32188816/82865030-17115c80-9ee3-11ea-90c6-5afb877b66d9.png)
+![main_after_breakpointset](https://user-images.githubusercontent.com/32188816/82865030-17115c80-9ee3-11ea-90c6-5afb877b66d9.png)
 
   3. `dc` - execute the program (this will stop at the break-point)
 
 
   4. `px @rbp-0xc` - print a hex dump of the `local_ch` variable to analyze it's value before the `movl` call
 
-    ![local_ch_before](https://user-images.githubusercontent.com/32188816/82865174-59d33480-9ee3-11ea-9715-8f7b28178c83.png)
+![local_ch_before](https://user-images.githubusercontent.com/32188816/82865174-59d33480-9ee3-11ea-9715-8f7b28178c83.png)
 
   5. `ds` - step once into the function
   6. `px @rbp-0xc` - print a hex dump of the `local_ch` variable to analyze it's value after the `movl` call
 
-    ![local_ch_after](https://user-images.githubusercontent.com/32188816/82865262-8dae5a00-9ee3-11ea-95c0-892ab62c4f41.png)
+![local_ch_after](https://user-images.githubusercontent.com/32188816/82865262-8dae5a00-9ee3-11ea-95c0-892ab62c4f41.png)
 
 In the last screen shot, we can see that the value of `local_ch` is set to 1.
 
@@ -1652,15 +1652,15 @@ So this is very similar to the last question, but this time we are analyzing reg
   1. `pdf @main` - analyze the function to see the address of `imul`
   2. `db 0x00400b62` - set a break-point at the call to `imul` and optionally run `pdf @main` to verify the break-point location
 
-    ![imul_bp](https://user-images.githubusercontent.com/32188816/82865695-9bb0aa80-9ee4-11ea-9c04-2ff99a4771a9.png)
+![imul_bp](https://user-images.githubusercontent.com/32188816/82865695-9bb0aa80-9ee4-11ea-9c04-2ff99a4771a9.png)
 
   3. `dc` - execute the program until it stops at the break-point and run `dr` to analyze the target register
 
-    ![before_imul_step](https://user-images.githubusercontent.com/32188816/82865727-b2570180-9ee4-11ea-9fdb-03f59b03765a.png)
+![before_imul_step](https://user-images.githubusercontent.com/32188816/82865727-b2570180-9ee4-11ea-9fdb-03f59b03765a.png)
 
   4. `ds` - step into the program to execute the `imul` function and run `dr` once more to analyze the change in the target register
 
-    ![after_imul_step](https://user-images.githubusercontent.com/32188816/82865771-c7cc2b80-9ee4-11ea-8d22-407fb104bb37.png)
+![after_imul_step](https://user-images.githubusercontent.com/32188816/82865771-c7cc2b80-9ee4-11ea-8d22-407fb104bb37.png)
 
 
 As we can see, the `eax` register holds the value of 6.
@@ -1672,11 +1672,11 @@ This is very similar to the first question, only using the address of a differen
   1. `pdf @main` to find where `eax` is set to 0 and `db 0x00400b69` to set a break-point at that location
     * also make note of the location of the target variable `local_4h` is at `rbp-0x4`
 
-    ![start](https://user-images.githubusercontent.com/32188816/82866575-6e64fc00-9ee6-11ea-9ff0-982fcb411f9f.png)
+![start](https://user-images.githubusercontent.com/32188816/82866575-6e64fc00-9ee6-11ea-9ff0-982fcb411f9f.png)
 
   2.  `dc` to execute the function to the break-point and `px @ rbp-0x4` to view the `local_4h` variables initial value
 
-    ![done](https://user-images.githubusercontent.com/32188816/82866578-6f962900-9ee6-11ea-8762-4757f8523b5b.png)
+![done](https://user-images.githubusercontent.com/32188816/82866578-6f962900-9ee6-11ea-8762-4757f8523b5b.png)
 
 As we can see, the value of `local_4h` is set to 6.
 
@@ -1688,12 +1688,12 @@ This is nearly the same as the last task. We start by loading up r2 in debug mod
 
   1. `db 0x00400b71` - set a break-point at the end of main
 
-    ![bp](https://user-images.githubusercontent.com/32188816/82867266-c4866f00-9ee7-11ea-9818-744ac3e80330.png)
+![bp](https://user-images.githubusercontent.com/32188816/82867266-c4866f00-9ee7-11ea-9818-744ac3e80330.png)
 
 
   2. `dc` to execute the function up until the break-point and run `px @ rbp-0x8` to view the value of `local_8h` then `px @ rbp-0x4` to view the value of `local_4h`
 
-    ![done2](https://user-images.githubusercontent.com/32188816/82867271-c5b79c00-9ee7-11ea-9a98-e71df685f232.png)
+![done2](https://user-images.githubusercontent.com/32188816/82867271-c5b79c00-9ee7-11ea-9a98-e71df685f232.png)
 
 ### 1 - what is the value of local_8h before the end of the main function?
 ```
