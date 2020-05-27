@@ -1,0 +1,23 @@
+# Nmap 7.80 scan initiated Wed May 27 01:23:35 2020 as: nmap -sC -sV -Pn -n -oN nmap/initial 10.10.12.209
+Nmap scan report for 10.10.12.209
+Host is up (0.14s latency).
+Not shown: 997 closed ports
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     OpenSSH 7.4 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 83:86:ab:3c:f1:3f:4c:c1:83:b9:55:95:f5:d3:4e:c6 (RSA)
+|   256 f7:f7:d6:88:22:d4:52:c4:52:e9:d7:37:45:03:17:a8 (ECDSA)
+|_  256 06:89:b7:28:d8:bf:d5:4a:f9:e1:3d:fd:9d:2b:f0:06 (ED25519)
+111/tcp  open  rpcbind 2-4 (RPC #100000)
+| rpcinfo: 
+|   program version    port/proto  service
+|   100000  2,3,4        111/tcp   rpcbind
+|   100000  2,3,4        111/udp   rpcbind
+|   100000  3,4          111/tcp6  rpcbind
+|_  100000  3,4          111/udp6  rpcbind
+3000/tcp open  http    Node.js Express framework
+| http-title: Hacker Forum | Login
+|_Requested resource was /login
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed May 27 01:24:10 2020 -- 1 IP address (1 host up) scanned in 34.95 seconds

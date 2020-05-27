@@ -1,0 +1,14 @@
+# Nmap 7.80 scan initiated Mon May 25 13:01:58 2020 as: nmap -sC -sV -Pn -n -oN nmap/initial -p- 10.10.16.234
+Nmap scan report for 10.10.16.234
+Host is up (0.14s latency).
+Not shown: 65486 closed ports, 48 filtered ports
+PORT      STATE SERVICE VERSION
+65534/tcp open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.8 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 00:c7:a1:0e:3d:76:62:e5:d1:ed:e9:96:7d:c0:76:51 (RSA)
+|   256 cd:70:f9:a1:2d:23:0c:bd:1b:88:27:b1:be:6d:87:04 (ECDSA)
+|_  256 1a:7b:6d:ca:f2:dd:f7:4a:51:d7:2d:36:0f:80:69:4f (ED25519)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon May 25 13:47:01 2020 -- 1 IP address (1 host up) scanned in 2703.32 seconds

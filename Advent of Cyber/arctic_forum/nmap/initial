@@ -1,0 +1,27 @@
+# Nmap 7.80 scan initiated Mon May 25 09:56:52 2020 as: nmap -sC -sV -Pn -n -oN nmap/initial 10.10.84.209
+Nmap scan report for 10.10.84.209
+Host is up (0.13s latency).
+Not shown: 997 closed ports
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     OpenSSH 7.4 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 57:94:8d:1a:92:10:d3:21:dc:63:b2:77:a6:f4:12:16 (RSA)
+|   256 ef:62:12:98:db:46:92:91:ef:05:9f:9a:7e:3b:4c:79 (ECDSA)
+|_  256 10:d7:89:63:61:6a:61:af:41:12:74:fc:55:1f:92:6f (ED25519)
+111/tcp  open  rpcbind 2-4 (RPC #100000)
+| rpcinfo: 
+|   program version    port/proto  service
+|   100000  2,3,4        111/tcp   rpcbind
+|   100000  2,3,4        111/udp   rpcbind
+|   100000  3,4          111/tcp6  rpcbind
+|   100000  3,4          111/udp6  rpcbind
+|   100024  1          36225/udp   status
+|   100024  1          42815/tcp   status
+|   100024  1          44805/udp6  status
+|_  100024  1          56081/tcp6  status
+3000/tcp open  http    Node.js Express framework
+| http-title: Arctic Forum | Login
+|_Requested resource was /login
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon May 25 09:57:39 2020 -- 1 IP address (1 host up) scanned in 46.84 seconds

@@ -1,0 +1,114 @@
+# Nmap 7.80 scan initiated Wed May 27 00:42:00 2020 as: nmap -sC -sV -Pn -n -oN nmap/all_ports -p- 10.10.244.246
+Nmap scan report for 10.10.244.246
+Host is up (0.14s latency).
+Not shown: 65529 closed ports
+PORT     STATE SERVICE   VERSION
+22/tcp   open  ssh       OpenSSH 7.4 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 0a:ee:6d:36:10:72:ce:f0:ef:40:9e:63:52:a9:86:44 (RSA)
+|   256 11:6e:8f:7f:15:66:e3:03:b1:c4:55:f8:e7:bb:59:23 (ECDSA)
+|_  256 b3:12:7a:7f:ac:89:72:c9:25:88:96:20:ad:c7:5b:4a (ED25519)
+111/tcp  open  rpcbind   2-4 (RPC #100000)
+| rpcinfo: 
+|   program version    port/proto  service
+|   100000  2,3,4        111/tcp   rpcbind
+|   100000  2,3,4        111/udp   rpcbind
+|   100000  3,4          111/tcp6  rpcbind
+|_  100000  3,4          111/udp6  rpcbind
+5601/tcp open  esmagent?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, Help, Kerberos, RPCCheck, RTSPRequest, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServerCookie, X11Probe: 
+|     HTTP/1.1 400 Bad Request
+|   FourOhFourRequest: 
+|     HTTP/1.1 404 Not Found
+|     kbn-name: kibana
+|     kbn-xpack-sig: 5a29ca259924bec4872ad69d3677ec71
+|     content-type: application/json; charset=utf-8
+|     cache-control: no-cache
+|     content-length: 60
+|     Date: Wed, 27 May 2020 07:07:58 GMT
+|     Connection: close
+|     {"statusCode":404,"error":"Not Found","message":"Not Found"}
+|   GetRequest: 
+|     HTTP/1.1 200 OK
+|     kbn-name: kibana
+|     kbn-xpack-sig: 5a29ca259924bec4872ad69d3677ec71
+|     cache-control: no-cache
+|     content-type: text/html; charset=utf-8
+|     content-length: 217
+|     accept-ranges: bytes
+|     Date: Wed, 27 May 2020 07:07:54 GMT
+|     Connection: close
+|     <script>var hashRoute = '/app/kibana';
+|     defaultRoute = '/app/kibana';
+|     hash = window.location.hash;
+|     (hash.length) {
+|     window.location = hashRoute + hash;
+|     else {
+|     window.location = defaultRoute;
+|     }</script>
+|   HTTPOptions: 
+|     HTTP/1.1 404 Not Found
+|     kbn-name: kibana
+|     kbn-xpack-sig: 5a29ca259924bec4872ad69d3677ec71
+|     content-type: application/json; charset=utf-8
+|     cache-control: no-cache
+|     content-length: 38
+|     Date: Wed, 27 May 2020 07:07:55 GMT
+|     Connection: close
+|_    {"statusCode":404,"error":"Not Found"}
+8000/tcp open  http      SimpleHTTPServer 0.6 (Python 3.7.4)
+|_http-server-header: SimpleHTTP/0.6 Python/3.7.4
+|_http-title: Directory listing for /
+9200/tcp open  http      Elasticsearch REST API 6.4.2 (name: sn6hfBl; cluster: elasticsearch; Lucene 7.4.0)
+| http-methods: 
+|_  Potentially risky methods: DELETE
+|_http-title: Site doesn't have a title (application/json; charset=UTF-8).
+9300/tcp open  vrace?
+| fingerprint-strings: 
+|   FourOhFourRequest, GetRequest, HTTPOptions, RTSPRequest, SIPOptions: 
+|_    This is not an HTTP port
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port5601-TCP:V=7.80%I=7%D=5/27%Time=5ECE1205%P=x86_64-pc-linux-gnu%r(Ge
+SF:tRequest,1D3,"HTTP/1\.1\x20200\x20OK\r\nkbn-name:\x20kibana\r\nkbn-xpac
+SF:k-sig:\x205a29ca259924bec4872ad69d3677ec71\r\ncache-control:\x20no-cach
+SF:e\r\ncontent-type:\x20text/html;\x20charset=utf-8\r\ncontent-length:\x2
+SF:0217\r\naccept-ranges:\x20bytes\r\nDate:\x20Wed,\x2027\x20May\x202020\x
+SF:2007:07:54\x20GMT\r\nConnection:\x20close\r\n\r\n<script>var\x20hashRou
+SF:te\x20=\x20'/app/kibana';\nvar\x20defaultRoute\x20=\x20'/app/kibana';\n
+SF:\nvar\x20hash\x20=\x20window\.location\.hash;\nif\x20\(hash\.length\)\x
+SF:20{\n\x20\x20window\.location\x20=\x20hashRoute\x20\+\x20hash;\n}\x20el
+SF:se\x20{\n\x20\x20window\.location\x20=\x20defaultRoute;\n}</script>")%r
+SF:(HTTPOptions,117,"HTTP/1\.1\x20404\x20Not\x20Found\r\nkbn-name:\x20kiba
+SF:na\r\nkbn-xpack-sig:\x205a29ca259924bec4872ad69d3677ec71\r\ncontent-typ
+SF:e:\x20application/json;\x20charset=utf-8\r\ncache-control:\x20no-cache\
+SF:r\ncontent-length:\x2038\r\nDate:\x20Wed,\x2027\x20May\x202020\x2007:07
+SF::55\x20GMT\r\nConnection:\x20close\r\n\r\n{\"statusCode\":404,\"error\"
+SF::\"Not\x20Found\"}")%r(RTSPRequest,1C,"HTTP/1\.1\x20400\x20Bad\x20Reque
+SF:st\r\n\r\n")%r(RPCCheck,1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\n"
+SF:)%r(DNSVersionBindReqTCP,1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\n
+SF:")%r(DNSStatusRequestTCP,1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\n
+SF:")%r(Help,1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\n")%r(SSLSession
+SF:Req,1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\n")%r(TerminalServerCo
+SF:okie,1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\n")%r(TLSSessionReq,1
+SF:C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\n")%r(Kerberos,1C,"HTTP/1\.
+SF:1\x20400\x20Bad\x20Request\r\n\r\n")%r(SMBProgNeg,1C,"HTTP/1\.1\x20400\
+SF:x20Bad\x20Request\r\n\r\n")%r(X11Probe,1C,"HTTP/1\.1\x20400\x20Bad\x20R
+SF:equest\r\n\r\n")%r(FourOhFourRequest,12D,"HTTP/1\.1\x20404\x20Not\x20Fo
+SF:und\r\nkbn-name:\x20kibana\r\nkbn-xpack-sig:\x205a29ca259924bec4872ad69
+SF:d3677ec71\r\ncontent-type:\x20application/json;\x20charset=utf-8\r\ncac
+SF:he-control:\x20no-cache\r\ncontent-length:\x2060\r\nDate:\x20Wed,\x2027
+SF:\x20May\x202020\x2007:07:58\x20GMT\r\nConnection:\x20close\r\n\r\n{\"st
+SF:atusCode\":404,\"error\":\"Not\x20Found\",\"message\":\"Not\x20Found\"}
+SF:");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port9300-TCP:V=7.80%I=7%D=5/27%Time=5ECE1206%P=x86_64-pc-linux-gnu%r(Ge
+SF:tRequest,18,"This\x20is\x20not\x20an\x20HTTP\x20port")%r(HTTPOptions,18
+SF:,"This\x20is\x20not\x20an\x20HTTP\x20port")%r(RTSPRequest,18,"This\x20i
+SF:s\x20not\x20an\x20HTTP\x20port")%r(FourOhFourRequest,18,"This\x20is\x20
+SF:not\x20an\x20HTTP\x20port")%r(SIPOptions,18,"This\x20is\x20not\x20an\x2
+SF:0HTTP\x20port");
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed May 27 01:09:06 2020 -- 1 IP address (1 host up) scanned in 1626.69 seconds
